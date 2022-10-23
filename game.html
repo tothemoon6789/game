@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: black;
+        }
+        h1 {
+            margin-top: 100px;
+            text-align: center;
+            color: white;
+            font-size: 100px;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        .change_success {
+            color: blue;
+            background-color: yellow;
+            font-size: 30px;
+            font-family: 'Courier New', Courier, monospace;
+            transition: all 0.25s;
+            border-radius: 5px;
+        }
+        
+        .change_fail {
+            /* color: blue; */
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 60px;
+            transition: all 0.25s;
+            background-color: red;
+            color: white;
+        }
+         /* .change_success {
+            color: blue;
+            background-color: yellow;
+            font-size: 100px;
+            font-family: 'Courier New', Courier, monospace;
+            transition: all 0.25s;
+            border-radius: 5px;
+        }
+        
+        .change_fail {
+            color: blue; 
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 60px;
+            transition: all 0.25s;
+            background-color: red;
+            color: white;
+        }  */
+    </style>
+</head>
+
+<body>
+    <h1 id="demo"></h1>
+    <h1 id="demi"></h1>
+    <script type="module">
+        // CSS
+        import _properties from "../gamedata/css/_properties.js"
+        // BOOTSTRAP
+        import util from "../gamedata/bootstrap4/util.js"
+        import _flex from "../gamedata/bootstrap4/_flex.js"
+        // JAVASCRIPT
+        import _boolean from "../gamedata/javascript/_boolean.js"
+        import _comparision from "../gamedata/javascript/_comparision.js"
+        import _window from "../gamedata/javascript/_window.js"
+        import _eventlistener from "../gamedata/javascript/_eventlistener.js";
+        import _dom from "../gamedata/javascript/_dom.js" //object
+        import _ifelse from "../gamedata/javascript/_ifelse.js"
+        import _loop from "../gamedata/javascript/_loop.js"
+        import _math from "../gamedata/javascript/_math.js"
+        import _number from "../gamedata/javascript/_number.js"
+        import _random from "../gamedata/javascript/_random.js"
+        import _string from "../gamedata/javascript/_string.js"
+        import _typeof from "../gamedata/javascript/_typeof.js"
+        // JAVASCRIPT WEB-----XUAT VAN BAN HTML RA MAN HINH
+        // YEU CAU: IN 1 DOAN HTML SAU RA MAN HINH.
+        // <h1 id="demo">HEADING_H1</h1>
+
+        // =======================================INPUT=========================================================
+        const CAR = util;
+        var SPEED = 400;
+        var DURATION_BETWEEN_TEXT = 0;                                 // DURATION
+        const ELEMENT_H1_DEMO = document.getElementById("demo");       // ELEMENT
+        const ELEMENT_H1_DEMI = document.getElementById("demi");       // ELEMENT
+        var THE_FIRST_INDEX_OF_AN_ARRAY = 0;                                //  set your counter to 1
+        var HEADING_CONTENT = ""; // create heading content
+        const CLASS_TO_CHANGE = "change_success";
+        const CLASS_TO_CHANGE_FAIL = "change_fail"
+        var ELEMENT_IN_HEADING;
+        var COUNTER = 0;
+        // ======================================= END INPUT=====================================================
+
+        myLoop();                   //  start the loop
+        setKeyboard();
+
+        // =======================================HANDLE=========================================================
+        function myLoop() {                                                         //  create a loop function
+            const mySettimeout = setTimeout(function () {                                                //  call a 3s setTimeout when the loop is called
+                // ELEMENT_H1_DEMO.innerHTML = ""; // clear content of Heading 1
+                const THE_END_INDEX_OF_AN_ARRAY = CAR.length - 1;
+                if (THE_FIRST_INDEX_OF_AN_ARRAY <= THE_END_INDEX_OF_AN_ARRAY) {
+                    let CAR_CONTENT = CAR[THE_FIRST_INDEX_OF_AN_ARRAY];
+                    for (let index = 0; index < CAR_CONTENT.length; index++) {
+                        const charInArray = CAR_CONTENT.charAt(index);
+                        HEADING_CONTENT += setChar(charInArray);
+                    }
+                    ELEMENT_H1_DEMO.innerHTML = HEADING_CONTENT;        //  your code here
+                    DURATION_BETWEEN_TEXT = CAR_CONTENT.length*SPEED;
+
+                    HEADING_CONTENT = "";
+                    COUNTER = 0;
+                }
+                THE_FIRST_INDEX_OF_AN_ARRAY++;                                      //  increment the counter
+                if (THE_FIRST_INDEX_OF_AN_ARRAY < CAR.length) {                             //  if the counter < 10, call the loop function
+                    myLoop();                                                       //  ..  again which will trigger another 
+                }                                                                   //  ..  setTimeout()
+            }, DURATION_BETWEEN_TEXT)
+        }
+        function setKeyboard() {                                                     //  create a inerhtml function
+            window.addEventListener("keydown", (event) => {                                     //call a function innerHTML when keydown
+
+                ELEMENT_IN_HEADING = document.getElementsByTagName("span");
+                // ELEMENT_H1_DEMI.innerHTML = event.key
+                if (ELEMENT_IN_HEADING[0] == undefined) {
+
+                    console.log("GAME CHUA LOAD XONG");
+                } else if(event.key.toString() == "Enter") {
+                    
+                } else if (event.key.toString() == ELEMENT_IN_HEADING[COUNTER].textContent) {
+
+
+                    ELEMENT_IN_HEADING[COUNTER].setAttribute("class", CLASS_TO_CHANGE);
+                    COUNTER++;
+
+                } else {
+
+                    ELEMENT_IN_HEADING[COUNTER].setAttribute("class", CLASS_TO_CHANGE_FAIL);
+
+
+                }
+            })
+        }
+        function setChar(char) {    // create a setChar function
+            return "<span>" + char + "</span>"; // return span element
+        }
+        // =======================================END HANDLE=====================================================
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- react.development.js -->
+    <!-- react-dom.development.js -->
+    <!-- balel -->
+     <!-- react.development.js -->
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <!-- react-dome.development.js -->
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+  <!-- babel.min.js -->
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <!-- SPREAD OPERATOR la dau 3 cham ... dung de noi 2 array voi nhau -->
+    <div id="demo"></div>
+    <script type="text/babel">
+        // 1/used in combination
+        const num1 = [1,2,3];
+        const num2 = [3,5,6];
+        const numCombine = [...num1,...num2];
+        const mylist1 = numCombine.map((num) => <li>{num}</li>);
+
+        //2/Assign the first and second items from numbers to variables and put the rest in an array
+        const [one,two,...rest] = numCombine;
+        console.log(one);
+        console.log(two);
+        console.log(rest);
+        console.log(numCombine)
+        // 3/use the spread operator to combine 2 objects
+        const obj1 = {
+            ten:"linh",
+            ho:"pham",
+            namsinh:1991,
+            sothich: ["danh dan","code","boiloi"],
+            nghenghiep:{
+                nghe1:"dev",
+                nghe2:"cafe",
+                nghe3:"stock"
+            }
+            
+        };
+        const obj2 = {
+            chulot:"ngoc",
+            noio:"saigon",
+            tencon:"leo"
+        }
+        const myCombineObj = {...obj1,...obj2};
+        console.log(myCombineObj);
+        // ==========================OUTPUT=============================
+        const root = ReactDOM.createRoot(document.getElementById("demo"));
+        root.render(mylist1);
+       
+    </script>
+</body>
+</html>

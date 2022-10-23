@@ -1,0 +1,170 @@
+<!-- ARROW FUNCTION -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- react.development.js -->
+  <!-- react-dom.development.js -->
+  <!-- babel -->
+  <!-- react.development.js -->
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <!-- react-dome.development.js -->
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+  <!-- babel.min.js -->
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+
+<body>
+  <div id="demo"></div>
+
+  <script type="text/babel">
+    // kieu function binh thuong
+    function f1() {
+      return "My f1";
+    }
+    // kieu 2, gan ten cho 1 functino vo danh
+    // f2 chua duoc thuc thi
+    const f2 = function () {
+      return "my f2";
+    }
+    // kieu 3, gan ten cho 1 afe
+    // f3 chua duoc thuc thi
+    const f3 = () => {
+      return "f3"
+    }
+    // keu 4, gan ten cho af
+    // f4 chua duoc thuc thi
+    const f4 = () => "f4";
+
+    // kieu 5, truyen tham so vao f1
+    // f5 chua duoc thuc thi
+    function f5(x) {
+      return "f5" + x;
+    }
+    // kieu 6, truyen tham so vao f2
+    // f6 chua duoc thuc thi
+    const f6 = function (x) {
+      return "f6" + x;
+    }
+    // kieu 7, truyen tham so vao f3
+    // f7 chua duoc thuc thi
+    const f7 = (x) => {
+      return "f7" + x;
+    }
+    // kieu 8, truyen tham so vao f4
+    // f8 chua duoc thuc thi
+    const f8 = (x) => "f8" + x;
+    
+    //================ snipet==================
+    //                      af
+    // () => 
+    //                      afa
+    // (arg) => 
+    //                          afad
+    // ({prop, prop}) => 
+    //                        afe
+    // () => {
+    //   return 
+    // }
+    //                            afea
+    // (arg) => {
+    //   return 
+    // }
+    //                            afead
+    // ({prop, prop}) => {
+    //   return 
+    // }
+    //                              afer
+    // (response) => {
+    //   return 
+    // }
+    //                              aferd
+    // (response) => {
+    //   return response.data
+    // }
+    //                              aferj
+    // (response) => {
+    //   return response.json()
+    // }
+    //                              afii
+    // (() => )()
+    //                              afo
+    // () =>  ( { prop:value} )
+    //                              afoa
+    // (arg) => ( { prop:value} )
+    //                                afp
+    // () => {
+    //   (  )
+    // }
+    //                              afpa
+    // (arg) => {
+    //   (  )
+    // }
+    //                                afpr
+    // promise
+    //   .then((response) => {  })
+    //   .catch((error) => {  })
+    //   .finally(() => {  })
+    //                                  afr
+    // (response) => 
+    //                                  afrd
+    // (response) => response.data
+    //                                  afrj
+    // (response) => response.json()
+    //                                    aaf
+    // async () => 
+    //                                  aafa
+    // async (arg) => 
+    //                                aafad
+    // async ({ prop }) => 
+    //                                  aafe
+    // async () => {
+    //   return 
+    // }
+    //                                  aafea
+    // async (arg) => {
+    //   return 
+    // }
+    //                                  aafead
+    // async ({ prop, prop }) => {
+    //   return 
+    // }
+    //                                    aafii
+    // (async () => )()
+    //                                    arfeq
+    // const newArray = array.filter((element) => element === value)
+    //                                      arfne
+    // const newArray = array.filter((element) => element !== value)
+    //                                    arfoeq
+    // const newArray = array.filter((element) => element.prop === value)
+    //                                        arfone
+    // const newArray = array.filter((element) => element.prop !== value)
+
+    function Hello() {
+      return (
+        <>
+          <h1>{f1()}</h1>
+          <h1>{f2()}</h1>
+          <h1>{f3()}</h1>
+          <h1>{f4()}</h1>
+          <h1>{f5(" day la x cua f5")}</h1>
+          <h1>{f6(" day la x cua f6")}</h1>
+          <h1>{f7(" day la x cua f7")}</h1>
+          <h1>{f8(" day la x cua f8")}</h1>
+        </>
+      )
+    }
+    // create root bang reactdom goi createRoot truyen vao id
+    const root = ReactDOM.createRoot(document.getElementById("demo"));
+    // root render
+    root.render(<Hello />)
+  </script>
+
+
+</body>
+
+</html>

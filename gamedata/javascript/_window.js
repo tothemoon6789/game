@@ -1,0 +1,55 @@
+const _window = [
+    "alert()",
+    "atob()",//n
+    "blur()",
+    "bota()",//n
+    "clearInterval()",//xem lai
+    "clearTimeout()",//xem lai
+    "close()",
+    "confirm()",
+    "console",
+    "document",
+    "focus()",
+    "frameElement",//n
+    "frames",//n
+    "history",//n
+    "getComputedStyle()",//n
+    "innerHeight",
+    "innerWidth",
+    "length",//n
+    "localStorage",//n
+    "location",//n
+    "matchMedia()",//n
+    "moveBy()",//n
+    "moveTo()",//n
+    "name",//n
+    "navigator",//n
+    "open()",//n
+    "opener",//n
+    "outerHeight",//n
+    "outerWidth",//n
+    "pageXOffset",//n
+    "pageYOffset",//n
+    "parent",//n
+    "print()",
+    "promt()",//n
+    "resizeBy()",//n
+    "resizeTo()",//n
+    "screen",//n
+    "screenLeft",//n
+    "screenTop",//n
+    "screenX",//n
+    "screenY",//n
+    "scrollBy()",//n
+    "scrollTo()",//n
+    "scrollX",//n
+    "scrollY",//n
+    "sessionStorage",//nf
+    "self",//n
+    "setInterval()",//n
+    "setTimeout()",//n
+    "status",//n
+    "stop()",//n
+    "top"//n
+]
+export default _window;

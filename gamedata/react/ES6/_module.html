@@ -1,0 +1,31 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- for react -->
+    <!-- react.development.js -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <!-- react-dome.development.js -->
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <!-- babel.min.js -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+
+<body>
+    <!-- There are two types of exports: Named and Default -->
+    <!-- You can only have one default export in a file, but many thins in {} -->
+    <script type="module"  >
+        import myFuntion from "./exForModule.js"
+        import {num1,num2,num5}  from "./exForModule.js"
+        console.log(myFuntion());
+        console.log(num1);
+        console.log(num5);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+<!-- ARRAY METHOD -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- react.development.js -->
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <!-- react-dome.development.js -->
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+  <!-- babel.min.js -->
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+</head>
+<body>
+  <!-- tao div id demo in du lieu -->
+  <div id="demo"></div>
+  <!-- tao script type=text/babel de viet jsx -->
+  <script type="text/babel">
+    // tao array
+    let myarray = ["xoai","cam","mit"];
+    // tao list co object la myarray, dung oj myarray goi phuong thuc .map
+    // truyen vao map mot ham afa tra ve jsx elemment
+    let mylist = myarray.map((i) => <p>{i}</p>);
+    // goi ReactDom goi den render(dulieu, id document)
+    const root = ReactDOM.createRoot(document.getElementById("demo"));
+    root.render(mylist);
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!-- // https://viblo.asia/p/cach-su-dung-destructuring-trong-javascript-oOVlYnrQ58W -->
+<!-- // nghien cuu bai nay hay lam -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- Destructuring là một cú pháp cho phép bạn gán các thuộc tính của một Object hoặc một Array -->
+    <script>
+        // 1. assigning array items to a variable
+        const vehicles = ["mustag", "f-150", "expedition"];
+        const [car, truck, suv] = vehicles;
+        console.log(car);
+        console.log(truck);
+        console.log(suv);
+        // When destructuring arrays, the order that variables are declared is important
+        const [mycar, , mysuv] = vehicles;
+        console.log(mycar);
+        console.log(mysuv);
+        // 2.Destructuring comes in handy when a function returns an array
+        function myFunction(a,b){
+            const add = a+b;
+            const sub = a-b;
+            const mul = a*b;
+            const div = a/b;
+            return [ add,sub,mul,div];
+        }
+         
+        const [ add,sub,mul,div]=myFunction(10,3);
+        console.log(add)
+        console.log(sub)
+        console.log(mul)
+        console.log(div)
+        // 3. using an object inside a function
+        const myobj = {
+            ten:"LINH",
+            tuoi:"31",
+            chieucao:"1m80",
+            vo:"ANH THU",
+            con:"MINH HOANG",
+            sothich:["docsach","cau ca"],
+            nghe:{
+                nghe1:"dev",
+                nghe2:"abc",
+                nghe3:"stock"
+            }
+        }
+        phamngoclinh(myobj);
+        // CAN THAN CHO NAY: TRUY CAP SAU VA BEN TRONG THI DUNG :{}
+        function phamngoclinh({ten,tuoi,chieucao,sothich,nghe:{nghe1}}){
+            const ngoclinh = ten + tuoi + chieucao + sothich+ nghe1;
+            console.log(ngoclinh);
+        }
+    </script>
+</body>
+
+</html>
